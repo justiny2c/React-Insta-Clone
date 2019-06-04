@@ -1,0 +1,31 @@
+.Post-object {
+    width: 100%;
+    height: auto;
+    /* margin: 0 12%; */
+    margin-top: 10px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.Post-object img {
+    width: 80%;
+    margin: 0 10%;
+}
+
+.likes {
+    font-weight: bold;
+}
+
+.Post-section {
+    width: 80%;
+    /* margin-left: 25%; */
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+form {
+    margin: 2%;
+}

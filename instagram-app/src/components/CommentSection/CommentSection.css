@@ -1,0 +1,14 @@
+.username {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.comment {
+    display: flex;
+    flex-flow: row;
+    /* margin: 0 12%; */
+}
+
+p {
+    margin: 1% 0;
+}
