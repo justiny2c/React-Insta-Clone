@@ -9,19 +9,33 @@ class App extends React.Component {
   constructor(){
   super();
   this.state = {
-    postArray: dummyData
+    postDataArray: []
 
   }
 } 
-  render(){
+componentDidMount () {
+  this.setState ({
+    postDataArray: dummyData,
+  })
+}
+
+searchBarFilter = (e, searchTerm) => {
+  e.preventDefault();
+  const newFilter = this.state.postDataArray.filter(
+    searchTerm => this.postArray === searchTerm
+  )
+}
+
+render(){
   return (
     <div className="App">
       <div className = "Search-bar">
-        <SearchBar />
+        <SearchBar 
+          searchBarFilter={this.searchBarFilter}/>
       </div>
       
       <div className = "Post-container">
-        <PostContainer postArray = {this.state.postArray} />
+        <PostContainer postArray = {this.state.postDataArray} />
       </div>
     </div>
   );

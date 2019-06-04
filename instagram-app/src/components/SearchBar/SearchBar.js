@@ -1,7 +1,17 @@
 import React from "react";
 import "./SearchBar.css";
 
-function SearchBar (){
+class SearchBar extends React.Component {
+    state = {
+        searchTerm: "",
+    };
+
+handleChange = e => {   
+    e.preventDefault();    
+    this.setState({      
+        searchTerm: e.target.value })};
+
+    render(){
     return (
         <div className = "SearchBar">
             <div className ="left-side-icons">
@@ -17,7 +27,12 @@ function SearchBar (){
                     
             </div>
 
-            <form><input
+            <form
+                onSubmit={e => this.props.searchBarFilter(e, this.state.searchTerm)}>
+                <input
+                    onChange={this.handleChange}
+                    value={this.state.searchTerm}
+                    className="searchInput"
                     placeholder="Search"></input></form>
 
             <div className = "right-side-icons">
@@ -32,7 +47,7 @@ function SearchBar (){
                     src = {require("./instagramUser.png")}/>
             </div>
         </div>
-    )
+    )}
 }
 
-export default SearchBar
+export default SearchBar;
