@@ -9,8 +9,8 @@ class App extends React.Component {
   constructor(){
   super();
   this.state = {
-    postDataArray: []
-
+    postDataArray: [],
+    newComment:[]
   }
 } 
 componentDidMount () {
@@ -19,12 +19,21 @@ componentDidMount () {
   })
 }
 
-searchBarFilter = (e, searchTerm) => {
-  e.preventDefault();
+searchBarFilter = searchTerm => {
   const newFilter = this.state.postDataArray.filter(
-    searchTerm => this.postArray === searchTerm
+    postObject => postObject.username === searchTerm  
   )
+  this.setState({
+    postDataArray: newFilter
+  })
 }
+
+addComment = newComment => {
+  const comments = this.state.postDataArray.comments
+  this.setState({
+      comments: [...comments, newComment]
+  })
+} 
 
 render(){
   return (
@@ -35,7 +44,9 @@ render(){
       </div>
       
       <div className = "Post-container">
-        <PostContainer postArray = {this.state.postDataArray} />
+        <PostContainer 
+          postArray = {this.state.postDataArray}
+          addComment = {this.addComment} />
       </div>
     </div>
   );

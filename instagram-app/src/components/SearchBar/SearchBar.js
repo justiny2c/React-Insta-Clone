@@ -11,6 +11,16 @@ handleChange = e => {
     this.setState({      
         searchTerm: e.target.value })};
 
+searchBarFilter = e => {
+    e.preventDefault();
+
+    this.props.searchBarFilter(this.state.searchTerm);
+
+    this.setState({
+        searchTerm: ""
+        })
+}
+
     render(){
     return (
         <div className = "SearchBar">
@@ -19,16 +29,18 @@ handleChange = e => {
                     className="left-side-logos"
                     src= {require("./instagramLogo.png")} 
                     alt="Instagram Logo"/>
-                <hr width=".5" size="50"></hr>    
+
+                <hr width=".5" size="50"></hr>  
+
                 <img
                     className="left-side-logos"
                     src={require("./instagramLetters.png")}
-                    alt = "Instagram Letters"/>
+                    alt = "Instagram Letters" />
                     
             </div>
 
             <form
-                onSubmit={e => this.props.searchBarFilter(e, this.state.searchTerm)}>
+                onSubmit={this.searchBarFilter}>
                 <input
                     onChange={this.handleChange}
                     value={this.state.searchTerm}
