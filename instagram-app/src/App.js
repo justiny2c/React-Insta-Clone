@@ -4,13 +4,16 @@ import './App.css';
 import dummyData from './dummy-data';
 import PostContainer from "./components/PostContainer/PostContainer";
 import SearchBar from "./components/SearchBar/SearchBar";
+import PostsPage from "./components/PostContainer/PostsPage";
+import withAuthenticate from "./components/authentication/withAuthenticate";
 
 class App extends React.Component {
   constructor(){
   super();
   this.state = {
     postDataArray: [],
-    newComment:[]
+    filteredArray: [],
+
   }
 } 
 componentDidMount () {
@@ -24,16 +27,9 @@ searchBarFilter = searchTerm => {
     postObject => postObject.username === searchTerm  
   )
   this.setState({
-    postDataArray: newFilter
+    filteredArray: newFilter
   })
 }
-
-addComment = newComment => {
-  const comments = this.state.postDataArray.comments
-  this.setState({
-      comments: [...comments, newComment]
-  })
-} 
 
 render(){
   return (
@@ -42,15 +38,18 @@ render(){
         <SearchBar 
           searchBarFilter={this.searchBarFilter}/>
       </div>
-      
-      <div className = "Post-container">
-        <PostContainer 
-          postArray = {this.state.postDataArray}
-          addComment = {this.addComment} />
+
+      <div className="Posts-Page">
+        <PostsPage 
+          filteredArray = {this.state.filteredArray}
+          postDataArray = {this.state.postDataArray}/>
       </div>
+    
     </div>
   );
   }
 }
+
+const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)
 
 export default App;

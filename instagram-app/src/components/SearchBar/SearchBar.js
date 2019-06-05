@@ -9,7 +9,8 @@ class SearchBar extends React.Component {
 handleChange = e => {   
     e.preventDefault();    
     this.setState({      
-        searchTerm: e.target.value })};
+        searchTerm: e.target.value 
+    })};
 
 searchBarFilter = e => {
     e.preventDefault();

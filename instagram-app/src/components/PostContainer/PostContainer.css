@@ -29,3 +29,22 @@
 form {
     margin: 2%;
 }
+.Post-object-header {
+    width: 80%;
+    height: 70px;
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.Post-object-header img {
+    height: 50px;
+    width: auto;
+    border-radius: 50%;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.Post-object-username {
+    font-weight: bold;
+}
