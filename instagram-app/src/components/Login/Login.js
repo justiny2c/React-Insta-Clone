@@ -1,5 +1,5 @@
 import React from "react";
-import "./Login.css";
+// import "./Login.css";
 
 
 class Login extends React.Component {
@@ -9,7 +9,6 @@ class Login extends React.Component {
     }
 
     login = e => {
-        // e.preventDefault();
         localStorage.setItem("username", this.state.username);
         localStorage.setItem("password", this.state.password)
 

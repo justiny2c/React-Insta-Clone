@@ -41,7 +41,7 @@ render(){
       </div>
 
       <div className="Posts-Page">
-        <ComponentFromWithAuthenticate 
+        <PostsPage 
           filteredArray = {this.state.filteredArray}
           postDataArray = {this.state.postDataArray}/>
       </div>
@@ -51,6 +51,6 @@ render(){
   }
 }
 
-const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)
 
-export default withAuthenticate(PostsPage)(Login)
+
+export default withAuthenticate(App)(Login)
