@@ -2,10 +2,11 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import dummyData from './dummy-data';
-import PostContainer from "./components/PostContainer/PostContainer";
+// import PostContainer from "./components/PostContainer/PostContainer";
 import SearchBar from "./components/SearchBar/SearchBar";
 import PostsPage from "./components/PostContainer/PostsPage";
 import withAuthenticate from "./components/authentication/withAuthenticate";
+import Login from "./components/Login/Login";
 
 class App extends React.Component {
   constructor(){
@@ -40,7 +41,7 @@ render(){
       </div>
 
       <div className="Posts-Page">
-        <PostsPage 
+        <ComponentFromWithAuthenticate 
           filteredArray = {this.state.filteredArray}
           postDataArray = {this.state.postDataArray}/>
       </div>
@@ -52,4 +53,4 @@ render(){
 
 const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)
 
-export default App;
+export default withAuthenticate(PostsPage)(Login)

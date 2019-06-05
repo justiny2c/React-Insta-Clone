@@ -1,6 +1,7 @@
 import React from "react";
 import PostContainer from "./PostContainer";
 
+
 class PostsPage extends React.Component {
     render(){
         return (

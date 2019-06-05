@@ -1,14 +1,24 @@
 import React from "react";
 
 
-// const ComponentFromWithAuthenticate = withAuthenticate(PostsPage)
-
-const withAuthenticate = SomeComponent => 
+const withAuthenticate = PostsPage => Login => 
     class extends React.Component {
+        constructor(){
+            // state = {
+            //     loggedIn: "",
+            // }
+        }
+
+
+componentDidMount(){}
+
+
     render(){
         return (
             <div>
-                <SomeComponent />
+                <PostsPage 
+                    filteredArray = {this.props.filteredArray}
+                    postDataArray = {this.props.postDataArray}/>
             </div>
         )
     }
