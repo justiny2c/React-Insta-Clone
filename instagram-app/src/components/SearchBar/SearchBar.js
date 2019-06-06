@@ -1,5 +1,6 @@
 import React from "react";
 import "./SearchBar.css";
+import styled from 'styled-components';
 
 class SearchBar extends React.Component {
     state = {
@@ -42,11 +43,11 @@ searchBarFilter = e => {
 
             <form
                 onSubmit={this.searchBarFilter}>
-                <input
+                <SearchInput
                     onChange={this.handleChange}
                     value={this.state.searchTerm}
                     className="searchInput"
-                    placeholder="Search"></input></form>
+                    placeholder="Search"></SearchInput></form>
 
             <div className = "right-side-icons">
                 <img
@@ -62,5 +63,11 @@ searchBarFilter = e => {
         </div>
     )}
 }
+
+const SearchInput = styled.input `
+    text-align: center;
+    width: 100%;
+    font-size: 1rem;
+`
 
 export default SearchBar;

@@ -1,5 +1,6 @@
 import React from "react";
-import "./CommentSection.css"
+import "./CommentSection.css";
+import styled from 'styled-components';
 
 class CommentSection extends React.Component {
     state = {
@@ -21,7 +22,7 @@ class CommentSection extends React.Component {
     addComment = e => {
         e.preventDefault();
 
-        const newComment = {username: "justin", text: this.state.commentValue}
+        const newComment = {username: "delajusjus", text: this.state.commentValue}
 
         this.setState({
             comments: [...this.state.comments, newComment]
@@ -50,13 +51,17 @@ class CommentSection extends React.Component {
 
     render(){
     return (
-        <>
-        <div className ="Post-section">
+
+        <PostDiv className ="Post-section">
             <div className = "like-bar">
             <img
                 className="like-button"
                 onClick={this.addLike}
                 src = {require("../SearchBar/instagramHeart.png")}/>
+            {/* <img
+                className="like-button hidden"
+                onClick={this.addLike}
+                src = {require("./instagramRedHeart.png")}/>     */}
             <img 
                 className="comment-button"
                 src = {require("../SearchBar/instagramChat.png")}/>
@@ -75,18 +80,46 @@ class CommentSection extends React.Component {
 
                     <form
                         className = "form">
-                        <input
+                        <Input
                             placeholder="Add a comment..."
                             onChange={this.handleChange}
                             value={this.state.commentValue}>
-                            </input>
+                            </Input>
                         <button
                             onClick={this.addComment}>...</button>    
                     </form>
-            </div>       
-        </>
+            </PostDiv>       
     )
 }
 }
+
+const Input = styled.input `
+    width: 100%;
+    height: 35px;
+    border: none;
+    font-size: 1rem;
+`
+
+const PostDiv = styled.div `
+    font-family: 'proxima-nova', sans-serif;
+    font-size: 1rem;
+    `
+
+
+
+// class HeartClick {
+//     constructor(heart){
+//         this.heart = heart
+//         this.heart.addEventListener("click", () => this.clickHeart());
+//     }
+
+//     clickHeart(){
+        
+//         this.heart.classList.add("hidden");
+    
+//     }
+// }
+
+// let heart = document.querySelectorAll(".like-button").forEach( element => new HeartClick(element) )
 
 export default CommentSection;

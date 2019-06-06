@@ -1,5 +1,6 @@
 import React from "react";
 import styled from 'styled-components';
+// import SearchBar from "./SearchBar/SearchBar";
 
 
 class Login extends React.Component {
@@ -36,6 +37,8 @@ class Login extends React.Component {
             <img
                 src = {require("./instagramLogInPhoto.png")}/>
             <Form>
+                <IGLetters
+                    src = {require("../SearchBar/instagramLetters.png")}/>
                 <Input
                     placeholder= "Username"
                     onChange={this.handleChangeUsername}
@@ -60,9 +63,10 @@ const LoginDiv = styled.div `
     display: flex;
     flex-flow: row;
     // border: 2px solid black;
-    // background: blue;
+    background: #e6e6e6;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 `
 
 const Form = styled.form `
@@ -71,17 +75,30 @@ const Form = styled.form `
 `
 
 const Input = styled.input `
+    width: 100%;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 10px 0;
     background: #f2f2f2;
+    font-size: 1rem;
+    font-family: 'proxima-nova', sans-serif;
+    text-align: center;
     `
 
 const Button = styled.button `
-    padding: 5px 10px;
+    width: 100%;
     margin-top: 10px;
     border-radius: 5px;
     font-family: 'proxima-nova', sans-serif;
-    font-weight: bold;
+    // font-weight: bold;
+    color: white;
+    background: #4da6ff;
+    font-size: 1rem;
+    padding:5px 0;
 `
+const IGLetters = styled.img `
+    height: 50px;
+    width: auto;
+    margin-bottom: 10px;
+    `
 
 export default Login;
