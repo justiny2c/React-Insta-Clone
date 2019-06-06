@@ -32,6 +32,9 @@ class Login extends React.Component {
 
     render(){
         return (
+            <div className = "loginPage">
+            <img
+                src = {require("./instagramLogInPhoto.png")}/>
             <form>
                 <input
                     placeholder= "Username"
@@ -48,6 +51,7 @@ class Login extends React.Component {
                     onClick={this.login}>Login</button>    
 
             </form>
+            </div>
         )
     }
 }

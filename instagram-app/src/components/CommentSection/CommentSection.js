@@ -11,10 +11,11 @@ class CommentSection extends React.Component {
 
     handleChange = e => {
         e.preventDefault();
+        // e.target.reset;
         this.setState({
             commentValue: e.target.value
         })
-    
+        
     }
     
     addComment = e => {
