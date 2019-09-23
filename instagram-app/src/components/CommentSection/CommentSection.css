@@ -1,0 +1,45 @@
+.username {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.comment {
+    display: flex;
+    flex-flow: row;
+    /* margin: 0 12%; */
+}
+
+p {
+    margin: 1% 0;
+}
+
+.like-bar {
+    height: 20px;
+    margin: 5px 0;
+    display: flex;
+}
+
+.like-bar img {
+    height: 100%;
+    width: auto;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    padding: 0;
+    margin: 5px 0;
+    border-top: 1px solid lightgray;
+}
+.form button {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.hidden {
+    display: none;
+}

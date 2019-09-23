@@ -1,0 +1,36 @@
+.SearchBar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+.left-side-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+}
+.left-side-logos {
+    height:35px;
+    padding: 0 10px;
+}
+
+.right-side-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20%;
+}
+
+.right-side-logos {
+    height:25px;
+    padding: 0 10px;
+    background-color: white;
+}
+
+form {
+    width: 20%;
+    padding: 0 12%;
+}
+
